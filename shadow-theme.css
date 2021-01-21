@@ -1,0 +1,52 @@
+div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
+  content: "Shadow Theme by WmeAllen";
+  display: block;
+}
+* {
+  text-shadow: 1px 1px 3px;
+}
+.membersGroup-v9BXpm.da-membersGroup.da-container {
+  color: white;
+}
+.membersWrap-2h-GB4 {
+  background-color: grey
+
+}
+.scrollableContainer-2NUZe {
+  box-shadow: 0px 0px 5px grey;
+}
+img.da-avatar {
+  box-shadow: 0px 0px 5px grey;
+}
+img.da-avatar:hover {
+  box-shadow: 0px 0px 15px blue;
+}
+.wrapper-3t9DeA.da-wrapper {
+  box-shadow: 0px 0px 5px grey
+}
+a.da-imageWrapper {
+    box-shadow: 0px 0px 5px;
+}
+.da-imageWrapper.da-image {
+    box-shadow: 0px 0px 5px;
+}
+.da-botTag {
+    box-shadow: 0px 0px 3px;
+}
+.btn-11C5_u.da-btn {
+    box-shadow: 0px 0px 3px;
+}
+@media only screen and (max-width: 700px) {
+.membersWrap-2h-GB4 {
+    display:none;
+    transition: 250ms
+}}
+@media only screen and (max-width: 600px) {
+.sidebar-2K8pFh.da-sidebar {
+    display:none;
+    transition: 250ms
+}}
+
+
+
+
