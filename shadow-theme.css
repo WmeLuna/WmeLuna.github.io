@@ -46,7 +46,9 @@ a.da-imageWrapper {
     display:none;
     transition: 250ms
 }}
-
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > nav > div:nth-child(2) {
+  display: none;
+}
 
 
 
