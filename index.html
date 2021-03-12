@@ -1,22 +1,26 @@
-<html><head> 
-	<title>BazaarViewer!</title> 
-	<meta name="description" content="Tools to make your life in Hypixel Skyblock Easier!">
-	<meta name="author" content="wwhtrbbt">
-	<meta content='https://media.discordapp.net/attachments/713486543091662869/767487331573563442/unknown.png' property='og:image'>
-
-</head> 
-<frameset rows="100%,*"> 
-	<frame src="https://wwhtrbbtt.github.io/hy/"> 
-		<noframes> 
-
-			<body> 
-
-			</body> 
-		</noframes> 
-</frameset> 
-
- 
-       
-
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>iframe - proxy</title>
+</head>
 <body>
-</body></html>
+<script>
+(function() {
+    var getRequest = function(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i"),
+                r = window.location.search.substr(1).match(reg);
+            return (r!=null)?  unescape(r[2]) : null;
+        },
+        height = getRequest("data-frameheight");
+    try {
+        var el = window.top.document.getElementById(getRequest("data-frameid"));
+        if (!el) return;
+        el.style.height = height + 'px';
+    }
+    catch (e) {
+    }
+})();
+</script>
+</body>
+</html>
