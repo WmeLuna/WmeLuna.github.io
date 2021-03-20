@@ -23,6 +23,24 @@ div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div
 .peopleColumn-29fq28 {
     background-color: var(--background-primary, #1f1f1f);
 }
+* {
+  box-shadow: unset;
+}
+.botTagRegular-2HEhHi {
+    background: #3b3d42;
+    color: #fff;
+}
+.isUnread-3Ef-o9 {
+  border-color: aquamarine;
+}
+.unreadPill-2HyYtt, .live-vBWnV6 {
+  color: unset;
+  background-color: aquamarine;
+}
+.unreadPillCapStroke-7rkHbg {
+  color: aquamarine;
+  fill: aquamarine;
+}
 
 @media only screen and (max-width: 700px) {
 .membersWrap-2h-GB4 {
