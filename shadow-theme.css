@@ -2,6 +2,13 @@ div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div
   content: "WmeTheme by WmeAllen";
   display: block;
 }
+#user-settings .da-contentColumn .da-h2 {
+    position: sticky;
+    top: 0;
+    margin-left: -20px;
+    z-index: 2;
+    padding: 4px 0 2px;
+}
 .theme-dark {
   --background-primary: #202225;
   --background-secondary: #202225;
