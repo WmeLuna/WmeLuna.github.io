@@ -1,41 +1,22 @@
 div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
-  content: "Shadow Theme by WmeAllen";
+  content: "WmeTheme by WmeAllen";
   display: block;
 }
-* {
-  text-shadow: 1px 1px 3px;
+.theme-dark {
+  --background-primary: #202225;
+  --background-secondary: #202225;
+  --channeltextarea-background: #26292e;
+  --background-secondary-alt: #202225;
+  --background-tertiary: #202225;
+  --background-accent: #4f545c;
+  --background-floating: #202225;
+  --background-mobile-primary: #202225;
+  --background-mobile-secondary: #202225;
 }
-.membersGroup-v9BXpm.da-membersGroup.da-container {
-  color: white;
+.peopleColumn-29fq28 {
+    background-color: var(--background-primary, #1f1f1f);
 }
-.membersWrap-2h-GB4 {
-  background-color: grey
 
-}
-.scrollableContainer-2NUZe {
-  box-shadow: 0px 0px 5px grey;
-}
-img.da-avatar {
-  box-shadow: 0px 0px 5px grey;
-}
-img.da-avatar:hover {
-  box-shadow: 0px 0px 15px white;
-}
-.wrapper-3t9DeA.da-wrapper {
-  box-shadow: 0px 0px 5px grey
-}
-a.da-imageWrapper {
-    box-shadow: 0px 0px 5px;
-}
-.da-imageWrapper.da-image {
-    box-shadow: 0px 0px 5px;
-}
-.da-botTag {
-    box-shadow: 0px 0px 3px;
-}
-.btn-11C5_u.da-btn {
-    box-shadow: 0px 0px 3px;
-}
 @media only screen and (max-width: 700px) {
 .membersWrap-2h-GB4 {
     display:none;
