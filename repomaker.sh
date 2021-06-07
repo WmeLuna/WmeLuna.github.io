@@ -4,4 +4,5 @@ sudo apt install fdroidserver libmagic1 rsync git python3-pyqt5.qtwebengine pyth
 clear
 yes | pip3 install django fdroidserver html5lib
 yes | pip3 install repomaker[gui]
+export PATH="$HOME/.local/bin:$PATH"
 repomaker-server
