@@ -5,3 +5,16 @@ apt-fast upgrade -y
 
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JZpc4)"
+
+
+if [ -f /var/run/reboot-required ]; then
+        echo
+        echo "* * * * * * * * * * * * * * * * * *"
+        echo "*                                 *"
+        echo "*      Rebooting your system      *"
+        echo "*                                 *"
+        echo "*                                 *"
+        echo "* * * * * * * * * * * * * * * * * *"
+        echo
+        sudo reboot
+fi
