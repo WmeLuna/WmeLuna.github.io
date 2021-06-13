@@ -13,7 +13,6 @@ if [ -f /var/run/reboot-required ]; then
         echo "*                                 *"
         echo "*      Rebooting your system      *"
         echo "*                                 *"
-        echo "*                                 *"
         echo "* * * * * * * * * * * * * * * * * *"
         echo
         sudo reboot
