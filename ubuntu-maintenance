@@ -1,0 +1,7 @@
+## Apt-Fast install
+/bin/bash -c "$(curl -sL https://git.io/vokNn)"
+apt-fast update -y
+apt-fast upgrade -y
+
+## Ucare Run
+sudo /bin/bash -c "$(curl -sL https://git.io/JZpc4)"
