@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+pre {
+  white-space: pre-wrap;
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000 !important;
+  background-image: url("https://github.com/WmeLuna/WmeLuna.github.io/raw/main/v462-n-130-textureidea_1.jpg")
+}
+a:link, a:visited {
+  color: #8e489a;
+}
