@@ -56,3 +56,15 @@
   --background-accent-3: rgb(15, 15, 15, 0.3);
   --background-floating-2: rgba(0, 0, 0, 0.2);
 }
+
+.container-3baos1 {
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 101;
+    width: 220px;
+}
+.container-1r6BKw.themed-ANHk51 {
+    padding-right: 238px;
+    z-index: 0;
+}
