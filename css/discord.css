@@ -68,3 +68,6 @@
     padding-right: 238px;
     z-index: 0;
 }
+#bd-pub-li {
+    display: none;
+}
