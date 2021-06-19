@@ -16,7 +16,7 @@ img {
   box-shadow: 0 0 7px 0px;
 }
 #output-area::after {
-  content:"WmeLuna Colab Theme";
+  content:"WmeLuna's Colab Theme";
   background:var(--colab-primary-surface-color);;
   position:fixed;
   z-index:5;
