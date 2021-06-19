@@ -15,3 +15,21 @@ a:link, a:visited {
 img {
   box-shadow: 0 0 7px 0px;
 }
+#output-area::after {
+  content:"WmeLuna Colab Theme";
+  background:var(--colab-primary-surface-color);;
+  position:fixed;
+  z-index:5;
+  right:0;
+  bottom:0;
+  display:flex;
+  opacity:0;
+  align-items:center;
+  line-height:normal;
+  padding:15px;
+  margin-right:10px;
+  margin-bottom:10px;
+  border-left:2px solid #540488;
+  border-radius:2px;
+  color:rgba(255,255,255,1);
+}
