@@ -1,0 +1,9 @@
+img {
+  position: fixed;
+  top: 0;
+  float: left;
+}
+pre {
+  bottom: 0;
+  float: right;
+}
