@@ -12,9 +12,6 @@ body {
 a:link, a:visited {
   color: #8e489a;
 }
-img {
-  box-shadow: 0 0 7px 0px;
-}
 #output-area::after {
   content:"WmeLuna's Colab Theme";
   background:var(--colab-primary-surface-color);
