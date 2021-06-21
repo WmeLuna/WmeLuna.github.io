@@ -1,8 +1,18 @@
+##check if stuck apt before starting
+if [ -f /var/lib/dpkg/lock-frontend ]; then
+        sudo killall apt apt-get
+        sudo rm /var/lib/apt/lists/lock
+        sudo rm /var/cache/apt/archives/lock
+        sudo rm /var/lib/dpkg/lock*
+        sudo dpkg --configure -a
+        sudo apt update
+fi
+
 ## Apt-Fast install
 /bin/bash -c "$(curl -sL https://git.io/vokNn)"
 apt-fast update -y
 apt-fast upgrade -y
-
+apt-fast install -y deborphan
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JZpc4)"
 
