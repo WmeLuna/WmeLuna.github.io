@@ -1,17 +1,7 @@
-##check if stuck apt before starting
-if [ -f /var/lib/dpkg/lock-frontend ]; then
-        echo -e "\e[31mDetected Stuck apt.. fixing, please waite[0m"
-        sudo killall apt apt-get >/dev/null 2>&1
-        sudo rm /var/lib/apt/lists/lock >/dev/null 2>&1
-        sudo rm /var/cache/apt/archives/lock >/dev/null 2>&1
-        sudo rm /var/lib/dpkg/lock* >/dev/null 2>&1
-        sudo dpkg --configure -a >/dev/null 2>&1
-        sudo apt update >/dev/null 2>&1
-fi
 
 ## Apt-Fast install
 /bin/bash -c "$(curl -sL https://git.io/vokNn)" >/dev/null 2>&1
-apt-fast update -y
+apt-fast update -y >/dev/null 2>&1
 apt-fast upgrade -y
 
 ##required for ucare
