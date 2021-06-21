@@ -11,6 +11,9 @@ apt-fast install -y ubuntu-restricted-addons libavcodec-extra unrar
 ## Required for ucare
 apt-fast install -y deborphan >/dev/null 2>&1
 
+## Clean extra locales
+apt-fast install -y localepurge >/dev/null 2>&1
+
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
