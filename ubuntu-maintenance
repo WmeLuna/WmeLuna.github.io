@@ -1,6 +1,6 @@
 ##check if stuck apt before starting
 if [ -f /var/lib/dpkg/lock-frontend ]; then
-        sudo killall apt apt-get
+        sudo killall apt apt-get >/dev/null 2>&1
         sudo rm /var/lib/apt/lists/lock
         sudo rm /var/cache/apt/archives/lock
         sudo rm /var/lib/dpkg/lock*
@@ -12,9 +12,12 @@ fi
 /bin/bash -c "$(curl -sL https://git.io/vokNn)"
 apt-fast update -y
 apt-fast upgrade -y
-apt-fast install -y deborphan
+
+##required for ucare
+apt-fast install -y deborphan >/dev/null 2>&1
+
 ## Ucare Run
-sudo /bin/bash -c "$(curl -sL https://git.io/JZpc4)"
+sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
 
 if [ -f /var/run/reboot-required ]; then
