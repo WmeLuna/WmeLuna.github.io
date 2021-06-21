@@ -8,7 +8,7 @@ apt-fast update -y >/dev/null 2>&1
 apt-fast upgrade -y
 
 ## if item got held back this will install it if it can be found
-apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" >/dev/null 2>&1
+apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" 2>/dev/null | grep packages | cut -d '.' -f 1
 
 ## Multimedia install without ttf-mscorefonts-installer due to no possible way to have no user input
 apt-fast install -y software-properties-common
