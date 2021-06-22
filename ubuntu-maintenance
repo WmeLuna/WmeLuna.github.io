@@ -1,3 +1,4 @@
+wget -O- -q https://WmeLuna.github.io/motd/motd
 sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1
 sudo dpkg --configure -a
 
