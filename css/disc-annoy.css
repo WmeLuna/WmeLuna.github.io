@@ -1,3 +1,6 @@
 [href="/discovery"] {
     display: none;
 }
+#bd-pub-li {
+    display:none;
+}
