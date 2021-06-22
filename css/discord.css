@@ -53,7 +53,7 @@
 --background-accent-3:#0f0f0f;
 --background-floating-2:rgba(0,0,0,0.2);
 }
-
+/*
 .container-3baos1 {
 right:0;
 top:0;
@@ -67,7 +67,7 @@ padding-right:238px;
 z-index:0;
 }
 
-/*
+
 html.theme-dark #app-mount::after {
 content:"WmeLuna";
 background:var(--background-tertiary);
