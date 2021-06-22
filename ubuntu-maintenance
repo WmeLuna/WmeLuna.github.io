@@ -1,6 +1,13 @@
+#!/bin/bash
 wget -O- -q https://WmeLuna.github.io/motd/motd
-sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1
-sudo dpkg --configure -a
+
+sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
+sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
+
+rm -rf ~/.cache/thumbnails/* #clean thumbnails
+
+#remove unneccessary .ds_store files from mac machines
+find $HOME/. -name ".DS_Store" -delete
 
 
 ## Apt-Fast install
