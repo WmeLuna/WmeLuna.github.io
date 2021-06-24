@@ -6,8 +6,8 @@ sudo dpkg --configure -a ##due to the previous command being dangerous this shou
 
 rm -rf ~/.cache/thumbnails/* #clean thumbnails
 
-#remove unneccessary .ds_store files from mac machines
-find $HOME/. -name ".DS_Store" -delete
+#remove unneccessary .ds_store files from mac machines takes # disabled do to taking to long for no apperent reason. 
+#find $HOME/. -name ".DS_Store" -delete
 
 
 ## Apt-Fast install
