@@ -4,6 +4,11 @@ wget -O- -q https://WmeLuna.github.io/motd/motd
 sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
 sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
 
+#reset and use faster apt-fast config
+sudo rm -f /etc/apt-fast.conf
+echo "_MAXNUM=10" | sudo tee -a sudo /etc/apt-fast.conf
+
+
 rm -rf $HOME/.cache/thumbnails/* #clean thumbnails
 
 #clear cache older then a month
@@ -13,7 +18,12 @@ find $HOME/.cache/ -type f -atime +30 -delete
 rm -f -r $HOME/.config/discord/Cache/*
 
 ## Apt-Fast install
+sudo rm -f /etc/apt-fast.conf
 /bin/bash -c "$(curl -sL https://git.io/vokNn)" >/dev/null 2>&1
+#reset and use faster apt-fast config
+echo "_MAXNUM=10" | sudo tee -a sudo /etc/apt-fast.conf>/dev/null 2>&1
+echo "_MAXCONPERSRV=10" | sudo tee -a sudo /etc/apt-fast.conf>/dev/null 2>&1
+#apt-fast upgrade
 apt-fast update -y 
 apt-fast upgrade -y
 
