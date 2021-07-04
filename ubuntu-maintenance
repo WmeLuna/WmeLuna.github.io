@@ -4,11 +4,6 @@ wget -O- -q https://WmeLuna.github.io/motd/motd
 sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
 sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
 
-#reset and use faster apt-fast config
-sudo rm -f /etc/apt-fast.conf
-echo "_MAXNUM=10" | sudo tee -a sudo /etc/apt-fast.conf
-
-
 rm -rf $HOME/.cache/thumbnails/* #clean thumbnails
 
 #clear cache older then a month
