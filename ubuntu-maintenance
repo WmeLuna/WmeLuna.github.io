@@ -4,11 +4,16 @@ wget -O- -q https://WmeLuna.github.io/motd/motd
 sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
 sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
 
-rm -rf ~/.cache/thumbnails/* #clean thumbnails
+rm -rf $HOME/.cache/thumbnails/* #clean thumbnails
 
 #remove unneccessary .ds_store files from mac machines takes # disabled do to taking to long for no apperent reason. 
 #find $HOME/. -name ".DS_Store" -delete
 
+#clear cache older then a month
+find $HOME/.cache/ -type f -atime +30 -delete
+
+#remove discord cache
+rm -f -r $HOME/.config/discord/Cache/*
 
 ## Apt-Fast install
 /bin/bash -c "$(curl -sL https://git.io/vokNn)" >/dev/null 2>&1
@@ -16,6 +21,9 @@ apt-fast update -y
 apt-fast upgrade -y
 
 ## if item got held back this will install it if it can be found
+echo "it will show:"
+echo "WARNING: apt does not have a stable CLI interface. Use with caution in scripts."
+echo "this is because the script is running \"apt list\" in order to get packages that for whatever reason got held back"
 apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" 2>/dev/null | grep packages | cut -d '.' -f 1
 
 ## Multimedia install without ttf-mscorefonts-installer due to no possible way to have no user input
