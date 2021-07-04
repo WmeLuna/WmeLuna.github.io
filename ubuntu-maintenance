@@ -6,9 +6,6 @@ sudo dpkg --configure -a ##due to the previous command being dangerous this shou
 
 rm -rf $HOME/.cache/thumbnails/* #clean thumbnails
 
-#remove unneccessary .ds_store files from mac machines takes # disabled do to taking to long for no apperent reason. 
-#find $HOME/. -name ".DS_Store" -delete
-
 #clear cache older then a month
 find $HOME/.cache/ -type f -atime +30 -delete
 
