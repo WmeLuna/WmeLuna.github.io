@@ -1,0 +1,20 @@
+sudo apt install lightdm xfce4 xfce4-goodies -y
+sudo apt install tigervnc-standalone-server novnc net-tools firefox -y
+
+echo "[Seat:*]" > /etc/lightdm/lightdm.conf
+echo "allow-guest=false" >> /etc/lightdm/lightdm.conf
+echo "autologin-user=ubuntu" >> /etc/lightdm/lightdm.conf
+echo "user-session=xfce" >> /etc/lightdm/lightdm.conf
+echo "#greeter-session=unity-greeter" >> /etc/lightdm/lightdm.conf
+echo "xserver-command=/etc/X11/xinit/xserverrc" >> /etc/lightdm/lightdm.conf
+
+echo "Enter a password for VNC access:"
+sudo vncpasswd /etc/vncpasswd
+
+echo '#!/bin/sh' > /etc/X11/xinit/xserverrc
+echo '' >> /etc/X11/xinit/xserverrc
+echo 'ARG=`echo $@ | sed -e "s#vt. -novtswitch##"`' >> /etc/X11/xinit/xserverrc
+echo 'GEOMETRY="1600x1000"' >> /etc/X11/xinit/xserverrc
+echo 'DEPTH="24"' >> /etc/X11/xinit/xserverrc
+echo '# single client mode; VNC password auth; TLS encryption optional;' >> /etc/X11/xinit/xserverrc
+echo 'exec Xvnc -desktop ubuntu -SecurityTypes "VncAuth,TLSVnc" -NeverShared -DisconnectClients -geometry $GEOMETRY -depth $DEPTH -rfbauth /etc/vncpasswd $ARG' >> /etc/X11/xinit/xserverrc
