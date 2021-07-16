@@ -1,0 +1,19 @@
+a[href*="/rpan/r/" i] {
+  display: none;
+}
+.ImageBox-image {
+  height: 100%;
+}
+._1OVBBWLtHoSPfGCRaPzpTf._3nSp9cdBpqL13CqjdMr2L_ { 
+  width: 100% !important;
+}
+div { 
+  max-width: none !important;
+}
+
+div[data-testid="frontpage-sidebar"] {
+  display: none;
+}
+[style="margin-left:24px;margin-top:0"] {
+  display: none;
+}
