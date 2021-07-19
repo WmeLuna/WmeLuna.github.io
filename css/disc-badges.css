@@ -23,3 +23,10 @@
     content: "";
     background: url("https://cdn.discordapp.com/attachments/830546520892768348/861689446297239593/d4d60d8c9a767d67ae33a6a7ec9c3a0d_1.png") center/100% no-repeat;
 }
+
+[data-user-id="865632950443835392"] .username-1A8OIy::before,
+[data-user-id="865632950443835392"] .nameAndDecorators-5FJ2dg .name-uJV0GL span::before,
+[data-user-id="865632950443835392"] .nameAndDecorators-5FJ2dg .name-uJV0GL .overflow-WK9Ogt::before, [data-user-id="865632950443835392"].userPopout-xaxa6l .headerTagUsernameNoNickname-1ZLDYY::before, [data-user-id="865632950443835392"].userPopout-xaxa6l .nickname-2gQ76l::before {
+    content: "";
+    background: url("https://cdn.discordapp.com/attachments/830546520892768348/861689446297239593/d4d60d8c9a767d67ae33a6a7ec9c3a0d_1.png") center/100% no-repeat;
+}
