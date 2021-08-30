@@ -1,0 +1,17 @@
+body.v4master {
+  background: #fff;
+  background-image: url(https://github.com/WmeLuna/WmeLuna.github.io/raw/main/v462-n-130-textureidea_1.jpg);
+}
+#pageShadow {
+background-image: unset;
+}
+#s4-workspace {
+  filter: invert(1);
+}
+#s4-workspace img {
+  filter: invert(1);
+}
+
+body #s4-ribbonrow {
+    background: url(https://github.com/WmeLuna/WmeLuna.github.io/raw/main/images/image.png) no-repeat top left !important;
+}
