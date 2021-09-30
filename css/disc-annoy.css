@@ -12,4 +12,11 @@
     display: none;
 }
 
-
+/* https://ptb.discord.com/channels/86004744966914048/836694789898109009/866219449764675604 */
+/*Offline Revamp*/
+.tipTitle-GL9qAt{content:"";font-size: 0px;}
+.tipTitle-GL9qAt::before{content:"Hey...";font-size: 12px;}
+.tip-2cgoli{content:"";font-size: 0px;}
+.tip-2cgoli::before{content: "You're Offline :c";font-size: 16px;}
+.problems-3mgf6w.slideIn-sCvzGz{display:none;}
+.container-16j22k.fixClipping-3qAKRb{background:rgba(0, 0, 0, 0.1);backdrop-filter: blur(5px);}
