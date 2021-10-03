@@ -18,6 +18,10 @@ i take advantage of this by making everything in here affect only those*/
 .da-appMount .authBox-hW6HRx .flex-1xMQg5 > div:nth-child(1) {
     display: none;
 }
+.da-appMount .authBox-hW6HRx {
+    margin: auto;
+    width: 80%;
+}
 
     
 /* modified version of https://ptb.discord.com/channels/86004744966914048/836694789898109009/836746120087732275 */
