@@ -13,5 +13,13 @@ background-image: unset !important;
 }
 
 body #s4-ribbonrow {
-    background: url(https://github.com/WmeLuna/WmeLuna.github.io/raw/main/images/image.png) no-repeat top left !important;
+    background: url(https://github.com/WmeLuna/WmeLuna.github.io/raw/main/images/image.png) no-repeat top center/cover !important;
+    background-size:  1489px 70px !important;
+}
+
+#pageWrapper, #pageShadow {
+  width: 90% !important;
+}
+.s4-nosetwidth {
+  width: unset !important;
 }
