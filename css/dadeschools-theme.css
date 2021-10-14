@@ -23,3 +23,6 @@ body #s4-ribbonrow {
 .s4-nosetwidth {
   width: unset !important;
 }
+#s4-workspace {
+  width: 100% !important;
+}
