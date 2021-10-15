@@ -13,7 +13,7 @@ background-image: unset !important;
 }
 
 body #s4-ribbonrow {
- background: url(https://mdcpsportalapps2.dadeschools.net/AppsSitesLinks/Images/ToolbarThemes/Blue/toolbar_bkg.png) repeat-x top;
+ background: url(https://mdcpsportalapps2.dadeschools.net/AppsSitesLinks/Images/ToolbarThemes/Blue/toolbar_bkg.png) repeat-x top !important;
 }
 
 #pageWrapper, #pageShadow {
