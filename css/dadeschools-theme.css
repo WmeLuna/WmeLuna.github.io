@@ -2,6 +2,21 @@ body.v4master {
   background: #000;
   background-image: url(https://github.com/WmeLuna/WmeLuna.github.io/raw/main/v462-n-130-textureidea_1.jpg) !important;
 }
+
+
+body[wmeready] #pageWrapper, body[wmeready] #pageShadow {
+  width: 100% !important;
+  padding-top: unset !important;
+  padding-bottom: unset !important;
+}
+body[wmeready] #s4-ribbonrow {
+  height: 30px !important;
+}
+body[wmeready] #s4-ribbonrow {
+    background: #0a2d46 !important;
+}
+
+
 #pageShadow {
 background-image: unset !important;
 }
