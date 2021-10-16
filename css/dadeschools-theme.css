@@ -15,6 +15,9 @@ body[wmeready] #s4-ribbonrow {
 body[wmeready] #s4-ribbonrow {
     background: #0a2d46 !important;
 }
+body[wmeready] {
+  margin-bottom: 0 !important;
+}
 
 
 #pageShadow {
