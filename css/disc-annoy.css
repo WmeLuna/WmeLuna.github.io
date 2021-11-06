@@ -16,6 +16,9 @@
     display: none;
 }
 
+.clickable-3rdHwn[aria-label="Update Ready!"] {
+    display: none;
+}
 /* https://ptb.discord.com/channels/86004744966914048/836694789898109009/866219449764675604 */
 /*Offline Revamp*/
 .tipTitle-GL9qAt{content:"";font-size: 0px;}
