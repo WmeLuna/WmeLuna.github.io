@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Downloading the Docker Image"
+docker run -p 6080:6080 -d colinhuang/wine-with-novnc > /dev/null 2>&1
+echo "Downloaded, running on port 6080"
+echo "Updating firefox for stability when browsing"
+docker exec -it $(docker ps -q) bash -c 'sudo apt update && sudo apt install firefox -y'  > /dev/null 2>&1
+echo "Updated, feel free to open web preview on port 6080"
