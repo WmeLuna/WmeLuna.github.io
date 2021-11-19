@@ -1,11 +1,11 @@
 @import url("https://wmeluna.com/css/disc-nolight.css");
-@import url("https://wmeluna.com/css/disc-lightcord.css");
+/*@import url("https://wmeluna.com/css/disc-lightcord.css"); lightcord no longer works to log in... commented out as it may continue to work later?*/
 
 
 .info-1VyQPT .colorMuted-HdFt4q.size12-3cLvbJ:not(.line-3ColD0) {
     display: none
 }
-#bd-pub-li,.markdown-hover, .welcomeCTAButtonOuter-2VwxSF, .container-JHR0NT, .loadingIconWrapper-PsVJ9m,[aria-label="Open GIF picker"],[aria-label="Open sticker picker"],[aria-label="Send a gift"],[href="/discovery"],a[href="https://support.discord.com"],[aria-label="Inbox"] {
+#bd-pub-li,.markdown-hover, .monaco-editor .minimap, .welcomeCTAButtonOuter-2VwxSF, .container-JHR0NT, .loadingIconWrapper-PsVJ9m,[aria-label="Open GIF picker"],[aria-label="Open sticker picker"],[aria-label="Send a gift"],[href="/discovery"],a[href="https://support.discord.com"],[aria-label="Inbox"] {
     display: none
 }
 .scroller-1Bvpku > div:nth-last-child(2) {
