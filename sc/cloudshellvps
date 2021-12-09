@@ -1,4 +1,9 @@
 #!/bin/bash
+#clear out docker images to save space and preserve ram
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+clear
 echo "Downloading the Docker Image"
 docker run -p 6080:6080 -d colinhuang/wine-with-novnc > /dev/null 2>&1
 echo "Downloaded, running"
