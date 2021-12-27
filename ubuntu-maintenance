@@ -47,5 +47,5 @@ if [ -f /var/run/reboot-required ]; then
         echo "*                                 *"
         echo "* * * * * * * * * * * * * * * * * *"
         echo
-        sudo reboot
+        sudo reboot -f
 fi
