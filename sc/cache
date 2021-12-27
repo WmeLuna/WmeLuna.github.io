@@ -1,3 +1,11 @@
 #!/bin/bash
-find ~/.cache/ -type f -atime +7 -delete # cache older then a week is deleted
-
+find ~/.cache/ -type f -atime +7 -delete # cache older then a week is deleted (any newer may not be safe to delete yet)
+sudo find /tmp -type f -atime +7 -delete
+#the rest is safe to delete now
+rm -rf ~/.cache/thumbnails/* 
+sudo apt-get -qq clean
+sudo journalctl -qq --vacuum-size=50M
+sudo apt-get -qq autoremove --purge
+sudo find /var/log -type f -name "*.gz" -delete
+rm -f -r ~/.config/discord/Cache/* #discord cache
+sudo rm -v /var/log/*.log* /var/log/syslog*
