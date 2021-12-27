@@ -1,0 +1,3 @@
+#!/bin/bash
+find ~/.cache/ -type f -atime +7 -delete # cache older then a week is deleted
+
