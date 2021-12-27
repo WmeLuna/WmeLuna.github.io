@@ -16,8 +16,8 @@ rm -f -r $HOME/.config/discord/Cache/*
 sudo rm -f /etc/apt-fast.conf
 /bin/bash -c "$(curl -sL https://git.io/vokNn)" >/dev/null 2>&1
 #reset and use faster apt-fast config
-echo "_MAXNUM=10" | sudo tee -a sudo /etc/apt-fast.conf>/dev/null 2>&1
-echo "_MAXCONPERSRV=10" | sudo tee -a sudo /etc/apt-fast.conf>/dev/null 2>&1
+echo "_MAXNUM=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
+echo "_MAXCONPERSRV=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
 #apt-fast upgrade
 apt-fast update -y 
 apt-fast upgrade -y
