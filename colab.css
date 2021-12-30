@@ -11,21 +11,3 @@ body {
 }
 a:link, a:visited {
   color: #8e489a;
-}
-#output-area::after {
-  content:"WmeLuna's Colab Theme";
-  background:var(--colab-primary-surface-color);
-  position:fixed;
-  z-index:5;
-  right:0;
-  bottom:0;
-  display:flex;
-  align-items:center;
-  line-height:normal;
-  padding:10px;
-  margin-right:10px;
-  margin-bottom:10px;
-  border-left:3px solid #540488;
-  border-radius:2px;
-  color:rgba(255,255,255,1);
-}
