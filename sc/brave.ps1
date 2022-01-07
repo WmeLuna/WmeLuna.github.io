@@ -1,5 +1,5 @@
 $repo = "brave/brave-browser"
-$file = "BraveBrowserStandaloneSilentDevSetup.exe"
+$file = "BraveBrowserStandaloneDevSetup.exe"
 
 $releases = "https://api.github.com/repos/$repo/releases"
 
@@ -7,7 +7,7 @@ $releases = "https://api.github.com/repos/$repo/releases"
 #Write-Host Determining latest release
 #$tag = (Invoke-WebRequest $releases | ConvertFrom-Json)[0].tag_name
 
-$tag = "v1.34.65"
+$tag = "v1.35.76"
 
 $download = "https://github.com/$repo/releases/download/$tag/$file"
 $name = $file.Split(".")[0]
