@@ -1,5 +1,5 @@
 #!/bin/bash
-wget -O- -q https://WmeLuna.github.io/motd/motd
+wget -O- -q https://WmeLuna.com/motd/motd
 
 sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
 sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
@@ -35,6 +35,12 @@ apt-fast install -y ubuntu-restricted-addons libavcodec-extra unrar >/dev/null 2
 
 ## Required for ucare
 apt-fast install -y deborphan >/dev/null 2>&1
+
+## Update Discord
+if [ -x "$(command -v discord-ptb)" ]; then
+echo "Discord PTB Installed, running update script"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
+fi
 
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
