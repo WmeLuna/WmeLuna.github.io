@@ -13,5 +13,6 @@ fi
 #install req's
 echo "  Installing pip3 requirements from official Cura Github"
 curl -LOJ https://github.com/Ultimaker/Cura/raw/master/requirements.txt > /dev/null 2>&1
-cat requirements.txt | xargs -n1 -P0 pip3 install > /dev/null 2>&1
+grep -v "pywin32" requirements.txt > tmpfile && mv tmpfile requirements.txt > /dev/null 2>&1
+cat requirements.txt | xargs -n1 -P0 pip3 install > /dev/null 
 rm -rf requirements.txt > /dev/null 2>&1
