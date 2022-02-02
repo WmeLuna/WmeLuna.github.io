@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /tmp
 #add ppa and detect error if ppa failed on that distro
+echo "Adding Cura unofficial PPA"
 sudo add-apt-repository ppa:thopiekar/cura-master -y > /dev/null 2>&1
 if ! { sudo apt-get update 2>&1 || echo E: update failed; } | grep -q '^[WE]:'; then
     echo "Cura PPA successful"
