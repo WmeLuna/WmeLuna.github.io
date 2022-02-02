@@ -1,16 +1,17 @@
 #!/bin/bash
 cd /tmp
 #add ppa and detect error if ppa failed on that distro
-echo "Adding Cura unofficial PPA"
+echo "  Adding Cura unofficial PPA"
 sudo add-apt-repository ppa:thopiekar/cura-master -y > /dev/null 2>&1
 if ! { sudo apt-get update 2>&1 || echo E: update failed; } | grep -q '^[WE]:'; then
-    echo "Cura PPA successful"
+    echo "  Cura PPA successful"
 else
-    echo "Cura PPA or another source failed... removing the Cura PPA to be safe"
+    echo "  Cura PPA or another source failed... removing the Cura PPA to be safe"
     sudo add-apt-repository --remove ppa:thopiekar/cura-master -y > /dev/null 2>&1
 fi
 
 #install req's
+echo "  Installing pip3 requirements from official Cura Github"
 curl -LOJ https://github.com/Ultimaker/Cura/raw/master/requirements.txt > /dev/null 2>&1
-cat requirements.txt | xargs -n1 -P0 pip3 install
-rm -rf requirements.txt
+cat requirements.txt | xargs -n1 -P0 pip3 install > /dev/null 2>&1
+rm -rf requirements.txt > /dev/null 2>&1
