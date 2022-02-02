@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /tmp
+curl -LOJ https://github.com/Ultimaker/Cura/raw/master/requirements.txt
+cat requirements.txt | xargs -n 1 -P $(wc -l requirements.txt | awk '{ print $1 }') pip install
+rm -rf requirements.txt
