@@ -42,6 +42,11 @@ echo "Discord PTB Installed, running update script"
 bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
 fi
 
+if [ -x "$(command -v betterdiscordctl)" ]; then
+echo "BetterDiscordCTL Installed, running update script"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/bdctl)" >/dev/null 2>&1
+fi
+
 if [ -x "$(command -v cura)" ]; then
 echo "Cura Installed, running stability script"
 bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
