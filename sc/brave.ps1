@@ -14,7 +14,7 @@ $name = $file.Split(".")[0]
 $exeFile = "$name.exe"
 
 Write-Host Dowloading Brave
-Invoke-WebRequest $download -Out $exeFile
+Start-BitsTransfer $download $exeFile
 
 start $exeFile
 Write-Host Installing Brave
