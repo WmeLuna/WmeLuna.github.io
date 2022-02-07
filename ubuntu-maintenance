@@ -23,10 +23,10 @@ apt-fast update -y
 apt-fast upgrade -y
 
 ## if item got held back this will install it if it can be found
-echo "it will show:"
-echo "WARNING: apt does not have a stable CLI interface. Use with caution in scripts."
-echo "this is because the script is running \"apt list\" in order to get packages that for whatever reason got held back"
-apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" 2>/dev/null | grep packages | cut -d '.' -f 1
+#echo "it will show:"
+#echo "WARNING: apt does not have a stable CLI interface. Use with caution in scripts."
+#echo "this is because the script is running \"apt list\" in order to get packages that for whatever reason got held back"
+#apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" 2>/dev/null | grep packages | cut -d '.' -f 1
 
 ## Multimedia install without ttf-mscorefonts-installer due to no possible way to have no user input
 apt-fast install -y software-properties-common >/dev/null 2>&1
