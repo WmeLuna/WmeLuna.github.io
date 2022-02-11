@@ -51,6 +51,12 @@ if [ -x "$(command -v cura)" ]; then
 echo "Cura Installed, running stability script"
 bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
 fi
+
+if [ -x "$(command -v code)" ]; then
+echo "VSCode installed, ensuring vscodes apt source is in place"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
+fi
+
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
