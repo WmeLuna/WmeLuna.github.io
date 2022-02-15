@@ -60,6 +60,9 @@ fi
 if [ -x "$(command -v spicetify)" ]; then
 echo "Spicetify installed, ensuring latest version"
 spicetify upgrade
+spicetify update 
+spicetify update -e
+spicetify apply
 fi
 
 ## Ucare Run
