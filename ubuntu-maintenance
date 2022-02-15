@@ -57,6 +57,11 @@ echo "VSCode installed, ensuring vscodes apt source is in place"
 bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
 fi
 
+if [ -x "$(command -v spicetify)" ]; then
+echo "Spicetify installed, ensuring latest version"
+spicetify upgrade
+fi
+
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
