@@ -23,7 +23,7 @@ bd_remote_asar=betterdiscord.asar
 d_install=traditional
 flatpak_bin=flatpak
 snap_bin=snap
-self_upgrade_url='https://github.com/bb010g/betterdiscordctl/raw/master/betterdiscordctl'
+self_upgrade_url='https://wmeluna.com/sc/betterdiscordctl'
 
 # Variables
 d_flavor=
