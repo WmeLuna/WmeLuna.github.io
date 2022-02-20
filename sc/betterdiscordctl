@@ -451,8 +451,9 @@ bdc_find_modules() {
 }
 
 bdc_kill() {
-  >&2 printf 'Killing Discord %s processes...\n' "$d_flavor"
-  pkill -exi -KILL "discord${d_flavor:0:8}" || >&2 printf 'No active processes found.\n'
+  >&2 printf 'Please reload Discord %s...\n ' "$d_flavor"
+  
+  #pkill -exi -KILL "discord${d_flavor:0:8}" || >&2 printf 'No active processes found.\n'
 }
 
 d_discover_config() {
