@@ -1,7 +1,8 @@
 #!/bin/bash
-sudo apt update
-sudo apt install python3-pip python3-setuptools python3-wheel -y  # install python-pip and so on without asking
-pip3 install apt-smart  # --user flag means install to per user site-packages directory(see below)
+sudo apt update >/dev/null
+sudo apt-fast install python3-pip python3-setuptools python3-wheel -y >/dev/null # install python-pip and so on without asking
+curl -sL https://github.com/martin68/apt-smart/raw/master/requirements.txt | sed 's/#.*//' | sort -u | grep "\S" | xargs -d '\n' -P0 pip3 install >/dev/null #multithreaded requirements install
+pip3 install apt-smart --no-deps
 echo "export PATH=\$(python -c 'import site; print(site.USER_BASE + \"/bin\")'):\$PATH" >> ~/.bashrc
 source ~/.bashrc  # set per user site-packages directory to PATH
 apt-smart -aq
