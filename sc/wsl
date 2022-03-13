@@ -1,0 +1,42 @@
+#!/bin/bash
+echo "Setting up..."
+echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER > /dev/null 2>&1
+#installing jsonparsing for wslg latest install
+sudo apt-get update >/dev/null
+sudo apt-get install jq -y >/dev/null
+
+#vars & setup
+userDir=`echo $(wslpath "$(wslvar USERPROFILE)")`
+scriptDir=`echo $(wslpath "$(wslvar temp)")/wslg-script`
+mkdir $scriptDir > /dev/null 2>&1
+cd $scriptDir
+
+#dl both
+echo "Downloading Needed software"
+wget -O vcxsrv.exe https://sourceforge.net/projects/vcxsrv/files/latest/download > /dev/null 2>&1 &
+wget -O wslg.msi "$(curl -s https://api.github.com/repos/microsoft/wslg/releases/latest | jq '.assets' | grep "browser_download_url" | grep "wsl_graphics_support_x64.msi" | cut -d : -f 2,3 | tr -d \" |tr -d ' ')" > /dev/null 2>&1 &
+wait
+echo "  Downloaded"
+
+#setup both
+echo "Installing, use default setup for both"
+echo "If asked to reboot wait until this script finishes"
+cmd.exe /C wslg.msi &
+cmd.exe /C vcxsrv.exe &
+wait
+echo "  Installed"
+
+rm -rf $scriptDir
+echo "Configuring:"
+#XLaunch correct config on start
+echo "  Setting XLaunch to load on start"
+cd "$userDir/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup"
+echo '<?xml version="1.0" encoding="UTF-8"?>
+<XLaunch WindowMode="MultiWindow" ClientMode="NoClient" LocalClient="False" Display="-1" LocalProgram="xcalc" RemoteProgram="xterm" RemotePassword="" PrivateKey="" RemoteHost="" RemoteUser="" XDMCPHost="" XDMCPBroadcast="False" XDMCPIndirect="False" Clipboard="True" ClipboardPrimary="True" ExtraParams="" Wgl="True" DisableAC="True" XDMCPTerminate="False"/>' > config.xlaunch
+
+#setup ubuntu stuff now
+echo "  Setting up Ubuntu to be able to output a UI when loading a program"
+echo "export DISPLAY=\$(ip route list default | awk '{print \$3}'):0
+export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
+source ~/.bashrc
+echo "Please reboot windows to finish setup"
