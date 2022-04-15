@@ -18,6 +18,7 @@ sudo rm -f /etc/apt-fast.conf
 #reset and use faster apt-fast config
 echo "_MAXNUM=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
 echo "_MAXCONPERSRV=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
+curl -sL https://github.com/ilikenwf/apt-fast/raw/master/completions/bash/apt-fast | sudo tee /etc/bash_completion.d/apt-fast>/dev/null 2>&1
 #apt-fast upgrade
 apt-fast update -y > /dev/null
 echo "Obtaining best current mirror using apt-smart"
