@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /tmp
 curl -L $1 -o requirements.txt --silent 
-cat requirements.txt | sed 's/#.*//' | sort -u | grep "\S" | xargs -n1 -P0 pip3 install > /dev/null 2>&1 &
+cat requirements.txt | sed 's/#.*//' | sort -u | grep "\S" | xargs -d '\n' -n1 -P0 pip3 install > /dev/null 2>&1 &
 while [ "$(ps -C "pip3 install"| wc -l)" -ne "1" ]; do echo -n -e "\r\e[KCurrently running installs: $(ps -C "pip3 install" --no-headers| wc -l)"; done
 echo ""
 rm -rf requirements.txt > /dev/null 2>&1
