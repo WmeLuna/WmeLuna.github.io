@@ -21,8 +21,8 @@ echo "_MAXCONPERSRV=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
 curl -sL https://github.com/ilikenwf/apt-fast/raw/master/completions/bash/apt-fast | sudo tee /etc/bash_completion.d/apt-fast>/dev/null 2>&1
 #apt-fast upgrade
 apt-fast update -y > /dev/null
-echo "Obtaining best current mirror using apt-smart"
-bash -c "$(curl -sL https://wmeluna.com/sc/apt-smart)"
+#echo "Obtaining best current mirror using apt-smart"
+#bash -c "$(curl -sL https://wmeluna.com/sc/apt-smart)"
 apt-fast upgrade -y
 
 ## if item got held back this will install it if it can be found
