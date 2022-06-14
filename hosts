@@ -1,0 +1,56 @@
+# Title: WmeLuna's Hosts
+#
+# Fetch the latest version of this file: https://wmeluna.com/hosts
+#
+# ===============================================================
+
+
+0.0.0.0 ttlivecdn.com
+0.0.0.0 ttlive.tiktok.com
+0.0.0.0 pull-cmaf-f16-gcp01.ttlivecdn.com
+0.0.0.0 pull-cmaf-f16-sg01.ttlivecdn.com
+0.0.0.0 pull-cmaf-f16-va01.ttlivecdn.com
+0.0.0.0 pull-f5-va01.ttlivecdn.com
+0.0.0.0 pull-f5-gcp01.ttlivecdn.com
+0.0.0.0 pull-f5-sg01.ttlivecdn.com
+0.0.0.0 update.kiwibrowser.com
+0.0.0.0 settings.kiwibrowser.com
+0.0.0.0 logos.kiwibrowser.com
+0.0.0.0 mon16-platform-useast5.us.tiktokv.com
+0.0.0.0 log16-applog-useast5.us.tiktokv.com
+0.0.0.0 p19-webcast.tiktokcdn-us.com
+0.0.0.0 webcast16-normal-useast5.us.tiktokv.com
+0.0.0.0 graph.facebook.com
+0.0.0.0 push-rtmp-f5-tt01.fcdn.us.tiktokv.com
+0.0.0.0 push-rtmp-f5-tt02.fcdn.us.tiktokv.com
+0.0.0.0 push-rtmp-l16-tt01.tiktokcdn-us.com
+0.0.0.0 pull-hls-f58-sg01.tiktokcdn.com
+0.0.0.0 pull-hls-f77-gcp01.tiktokcdn.com
+0.0.0.0 pull-hls-f77-sg01.tiktokcdn.com
+0.0.0.0 pull-hls-f77-va01.tiktokcdn.com
+0.0.0.0 pull-hls-l77-va01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f16-gcp01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f16-sg01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f16-tt01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f16-tt02.tiktokcdn.com
+0.0.0.0 pull-cmaf-f16-va01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f58-sg01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l10-sg01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f77-va01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f77-sg01.tiktokcdn.com
+0.0.0.0 pull-cmaf-f77-gcp01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l77-va01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l16-va01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l16-sg01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l16-gcp01.tiktokcdn.com
+0.0.0.0 pull-cmaf-l16-tt01.tiktokcdn-us.com
+0.0.0.0 pull-cmaf-f16-tt01.fcdn.us.tiktokv.com
+0.0.0.0 pull-cmaf-f16-tt02.fcdn.us.tiktokv.com
+0.0.0.0 libra16-platform-useast5.us.tiktokv.com
+0.0.0.0 gecko16-platform-useast5.us.tiktokv.com
+0.0.0.0 pull-f5-tt01.fcdn.us.tiktokv.com
+0.0.0.0 pull-f5-tt02.fcdn.us.tiktokv.com
+0.0.0.0 pull-f5-va01.tiktokcdn.com
+0.0.0.0 lf16-tiktok-game.ibytedtos.com
+0.0.0.0 settings.crashlytics.com
+0.0.0.0 starling-oversea.byteoversea.com
