@@ -64,10 +64,10 @@ fi
 
 if [ -x "$(command -v spicetify)" ]; then
 echo "Spicetify installed, ensuring latest version"
-spicetify upgrade
-spicetify update 
-spicetify update -e
-spicetify apply
+echo -e "/n" | spicetify upgrade
+echo -e "/n" | spicetify update 
+echo -e "/n" | spicetify update -e
+echo -e "/n" | spicetify apply
 fi
 
 ## Ucare Run
