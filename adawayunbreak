@@ -1,4 +1,4 @@
 #unbreak some apps
-allow *.amazon-adsystem.com
-allow aan.amazon.com
-allow device-metrics*.amazon.com
+*.amazon-adsystem.com
+aan.amazon.com
+device-metrics*.amazon.com
