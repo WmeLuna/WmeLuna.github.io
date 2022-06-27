@@ -76,7 +76,6 @@ echo -e "/n" | spicetify update -e
 echo -e "/n" | spicetify apply
 fi
 
-if
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
