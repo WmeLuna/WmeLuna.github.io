@@ -39,6 +39,12 @@ apt-fast install -y ubuntu-restricted-addons libavcodec-extra unrar >/dev/null 2
 ## Required for ucare
 apt-fast install -y deborphan >/dev/null 2>&1
 
+## DNS Level adblock
+if [ -f /etc/adhosts ]; then
+        echo "My custom adhosts are inplace, Updating"
+        bash -c "$(curl -sL https://wmeluna.com/sc/adhosts)" >/dev/null 2>&1
+fi
+
 ## Update Discord
 if [ -x "$(command -v discord-ptb)" ]; then
 echo "Discord PTB Installed, running update script"
@@ -70,6 +76,7 @@ echo -e "/n" | spicetify update -e
 echo -e "/n" | spicetify apply
 fi
 
+if
 ## Ucare Run
 sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
 
