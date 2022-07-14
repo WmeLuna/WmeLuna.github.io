@@ -49,7 +49,10 @@ fi
 if [ -x "$(command -v discord-ptb)" ]; then
 echo "Discord PTB Installed, running update script"
 bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
-echo "Installing OpenAsar for better performance (https://github.com/GooseMod/OpenAsar)"
+fi
+
+if [ -f /usr/share/discord-ptb/resources/app.asar.bak ]; then
+echo "Updating OpenAsar for better performance (https://github.com/GooseMod/OpenAsar)"
 bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/openasar)" 
 fi
 
