@@ -1,5 +1,7 @@
-cd /home/luna/Documents/kern/packages && ls | xargs -P0 -I{} git -C {} pull
-cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} pull
-cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull
-cd /usr/share/discord-development/resources/ && wget -O app-orginal.asar https://wmeluna.com/nightly/open.asar
-cd /home/luna/Documents/kern/ && wget -O kernel.asar https://wmeluna.com/nightly/kernel.asar
+#!/bin/bash
+
+cd /home/luna/Documents/kern/packages && ls | xargs -P0 -I{} git -C {} pull &
+cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} pull &
+cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull &
+cd /usr/share/discord-development/resources/ && wget -O app-orginal.asar https://wmeluna.com/nightly/open.asar -nv
+cd /home/luna/Documents/kern/ && wget -O kernel.asar https://wmeluna.com/nightly/kernel.asar -nv
