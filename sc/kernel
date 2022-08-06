@@ -5,7 +5,7 @@ cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} 
 cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull &
 wait
 # update deps
-cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i -P --reporter=silent"
+cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i -P"
 # update kernel and openasar
 cd /usr/share/discord-development/resources/ && wget -O app-orginal.asar https://wmeluna.com/nightly/open.asar -nv
 cd /home/luna/Documents/kern/ && wget -O kernel.asar https://wmeluna.com/nightly/kernel.asar -nv
