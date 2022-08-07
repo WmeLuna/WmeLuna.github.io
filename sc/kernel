@@ -1,8 +1,8 @@
 #!/bin/bash
 # update plugins and themes
-cd /home/luna/Documents/kern/packages && ls | xargs -P0 -I{} git -C {} pull &
-cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} pull &
-cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull &
+cd /home/luna/Documents/kern/packages && ls | xargs -P0 -I{} git -C {} pull -q &
+cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} pull -q &
+cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull -q &
 wait
 # update deps; build 1 at a time for performance reasons (sometimes when using a pr it isnt built); remove dev deps
 cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i --reporter=silent"
