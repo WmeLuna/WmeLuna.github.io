@@ -5,8 +5,8 @@ cd /home/luna/Documents/kern/powercord/plugins && ls | xargs -P0 -I{} git -C {} 
 cd /home/luna/Documents/kern/powercord/themes && ls | xargs -P0 -I{} git -C {} pull -q &
 wait
 # update deps; build 1 at a time for performance reasons (sometimes when using a pr it isnt built); remove dev deps
-cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i --reporter=silent"
-cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P1 -I{} bash -c "cd {}; pnpm run --silent build; pnpm run --silent dist"
+#cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i --reporter=silent"
+#cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P1 -I{} bash -c "cd {}; pnpm run --silent build; pnpm run --silent dist"
 cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i -P --reporter=silent"
 # update kernel and openasar
 cd /usr/share/discord-development/resources/ && wget -O app-orginal.asar https://wmeluna.com/nightly/open.asar -nv
