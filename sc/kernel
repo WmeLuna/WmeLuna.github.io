@@ -9,6 +9,6 @@ wait
 #cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P1 -I{} bash -c "cd {}; pnpm run --silent build; pnpm run --silent dist"
 cd /home/luna/Documents/kern/packages && find . -maxdepth 2 -type f -name "package.json" -execdir pwd \; | xargs -P0 -I{} bash -c "cd {}; pnpm i -P --reporter=silent"
 # update kernel and openasar
-cd /usr/share/discord-development/resources/ && wget -O app-orginal.asar https://wmeluna.com/nightly/open.asar -nv
+cd /usr/share/discord-development/resources/ && wget -O app-original.asar https://wmeluna.com/nightly/open.asar -nv
 cd /home/luna/Documents/kern/ && wget -O kernel.asar https://wmeluna.com/nightly/kernel.asar -nv
 exit
