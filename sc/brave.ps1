@@ -3,7 +3,7 @@ cd $env:userprofile\Downloads
 $repo = "brave/brave-browser"
 $file = "BraveBrowserStandaloneSilentSetup.exe"
 $localappdata = $env:LOCALAPPDATA
-$tag = "v1.39.111"
+$tag = "v1.42.97"
 
 #$releases = "https://api.github.com/repos/$repo/releases"
 #Write-Host Determining latest release
