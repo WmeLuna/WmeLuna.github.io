@@ -11,4 +11,7 @@ else
 fi
 
 #install req's
-curl -s https://wmeluna.com/sc/reqinstall | bash -s https://github.com/Ultimaker/Cura/raw/main/requirements.txt
+cd /tmp
+wget https://github.com/Ultimaker/Cura/raw/main/requirements.txt
+pip3 -q install -r /tmp/requirements.txt
+#curl -s https://wmeluna.com/sc/reqinstall | bash -s https://github.com/Ultimaker/Cura/raw/main/requirements.txt
