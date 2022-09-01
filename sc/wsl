@@ -4,7 +4,7 @@ echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER > /dev/
 #installing jsonparsing for wslg latest install
 sudo apt-get update >/dev/null
 sudo add-apt-repository ppa:wslutilities/wslu -y >/dev/null
-sudo apt-get install jq xdg-utils ubuntu-wsl -y >/dev/null
+sudo apt-get install jq xdg-utils ubuntu-wsl unifont unifont-bin -y >/dev/null
 
 #vars & setup
 userDir=`echo $(wslpath "$(wslvar USERPROFILE)")`
