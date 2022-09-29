@@ -7,5 +7,5 @@ export function DiscStatus() {
         .then(response => {return response.json()})
         .then(data => {status.current.innerText = data.data.discord_status})
     }, [])
-    return <span ref={status}>Unloaded</span>
+    return <span ref={status}></span>
 }
