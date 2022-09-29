@@ -1,0 +1,4 @@
+#unbreak some apps
+*.amazon-adsystem.com
+aan.amazon.com
+device-metrics*.amazon.com

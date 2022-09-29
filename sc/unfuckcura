@@ -1,0 +1,17 @@
+#!/bin/bash
+cd /tmp
+#add ppa and detect error if ppa failed on that distro
+echo "  Adding Cura unofficial PPA"
+sudo add-apt-repository ppa:thopiekar/cura -y > /dev/null 2>&1
+if ! { sudo apt-get update 2>&1 || echo E: update failed; } | grep -q '^[WE]:'; then
+    echo "  Cura PPA successful"
+else
+    echo "  Cura PPA or another source failed... removing the Cura PPA to be safe"
+    sudo add-apt-repository --remove ppa:thopiekar/cura -y > /dev/null 2>&1
+fi
+
+#install req's
+cd /tmp
+wget https://github.com/Ultimaker/Cura/raw/main/requirements.txt > /dev/null 2>&1
+pip3 -q install -r /tmp/requirements.txt
+#curl -s https://wmeluna.com/sc/reqinstall | bash -s https://github.com/Ultimaker/Cura/raw/main/requirements.txt

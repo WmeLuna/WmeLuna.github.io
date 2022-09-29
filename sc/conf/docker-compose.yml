@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+  womginx:
+    build: .
+    container_name: womginx
+    environment:
+      - PORT=80
+    ports:
+      - 127.0.0.1:8080:80
+    restart: unless-stopped

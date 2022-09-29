@@ -1,0 +1,54 @@
+div[class*="sidebar"] nav[class^="sidebar-"] div[class^="info"]:last-child > div:last-child::after {
+  content: "WmeTheme by WmeAllen";
+  display: block;
+}
+#user-settings .da-contentColumn .da-h2 {
+    position: sticky;
+    top: 0;
+    margin-left: -20px;
+    z-index: 2;
+    padding: 4px 0 2px;
+}
+.theme-dark {
+  --background-primary: #202225;
+  --background-secondary: #202225;
+  --channeltextarea-background: #26292e;
+  --background-secondary-alt: #202225;
+  --background-tertiary: #202225;
+  --background-accent: #4f545c;
+  --background-floating: #202225;
+  --background-mobile-primary: #202225;
+  --background-mobile-secondary: #202225;
+}
+.peopleColumn-29fq28 {
+    background-color: var(--background-primary, #1f1f1f);
+}
+.botTagRegular-2HEhHi {
+    background: #3b3d42;
+    color: #fff;
+}
+.isUnread-3Ef-o9 {
+  border-color: aquamarine;
+}
+.unreadPill-2HyYtt, .live-vBWnV6 {
+  color: unset;
+  background-color: aquamarine;
+}
+.unreadPillCapStroke-7rkHbg {
+  color: aquamarine;
+  fill: aquamarine;
+}
+
+@media only screen and (max-width: 700px) {
+.membersWrap-2h-GB4 {
+    display:none;
+    transition: 250ms
+}}
+@media only screen and (max-width: 600px) {
+.sidebar-2K8pFh.da-sidebar {
+    display:none;
+    transition: 250ms
+}}
+
+
+

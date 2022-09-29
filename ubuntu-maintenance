@@ -1,0 +1,94 @@
+#!/bin/bash
+wget -O- -q https://WmeLuna.com/motd/motd
+
+sudo killall apt-fast apt-get apt aptitude >/dev/null 2>&1 ##avoid errors caused by other active apt's
+sudo dpkg --configure -a ##due to the previous command being dangerous this should repair any damage done
+
+rm -rf $HOME/.cache/thumbnails/* #clean thumbnails
+
+#clear cache older then a month
+find $HOME/.cache/ -type f -atime +30 -delete
+
+#remove discord cache
+rm -f -r $HOME/.config/discord/Cache/*
+
+## Apt-Fast install
+sudo rm -f /etc/apt-fast.conf
+/bin/bash -c "$(curl -sL https://git.io/vokNn)" >/dev/null 2>&1
+#reset and use faster apt-fast config
+echo "_MAXNUM=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
+echo "_MAXCONPERSRV=10" | sudo tee -a /etc/apt-fast.conf>/dev/null 2>&1
+curl -sL https://github.com/ilikenwf/apt-fast/raw/master/completions/bash/apt-fast | sudo tee /etc/bash_completion.d/apt-fast>/dev/null 2>&1
+#apt-fast upgrade
+apt-fast update -y > /dev/null
+#echo "Obtaining best current mirror using apt-smart"
+#bash -c "$(curl -sL https://wmeluna.com/sc/apt-smart)"
+apt-fast upgrade -y
+
+## if item got held back this will install it if it can be found
+#echo "it will show:"
+#echo "WARNING: apt does not have a stable CLI interface. Use with caution in scripts."
+#echo "this is because the script is running \"apt list\" in order to get packages that for whatever reason got held back"
+#apt-fast install -y "$(sudo apt list --upgradable | cut -f1 -d'/' | sed 's/Listing...//g' | grep '\S')" 2>/dev/null | grep packages | cut -d '.' -f 1
+
+## Multimedia install without ttf-mscorefonts-installer due to no possible way to have no user input
+apt-fast install -y software-properties-common >/dev/null 2>&1
+sudo add-apt-repository multiverse -y >/dev/null 2>&1
+apt-fast install -y ubuntu-restricted-addons libavcodec-extra unrar >/dev/null 2>&1
+
+## Required for ucare
+apt-fast install -y deborphan >/dev/null 2>&1
+
+## DNS Level adblock
+if [ -f /etc/adhosts ]; then
+        echo "My custom adhosts are inplace, Updating"
+        bash -c "$(curl -sL https://wmeluna.com/sc/adhosts)" >/dev/null 2>&1
+fi
+
+## Update Discord
+if [ -x "$(command -v discord-ptb)" ]; then
+echo "Discord PTB Installed, running update script"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
+fi
+
+if [ -f /usr/share/discord-ptb/resources/app.asar.bak ]; then
+echo "Updating OpenAsar for better performance (https://github.com/GooseMod/OpenAsar)"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/openasar)" 
+fi
+
+if [ -x "$(command -v betterdiscordctl)" ]; then
+echo "BetterDiscordCTL Installed, running update script"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/bdctl)" >/dev/null 2>&1
+fi
+
+if [ -x "$(command -v cura)" ]; then
+echo "Cura Installed, running stability script"
+bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
+fi
+
+if [ -x "$(command -v code)" ]; then
+echo "VSCode installed, ensuring vscodes apt source is in place"
+bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
+fi
+
+if [ -x "$(command -v spicetify)" ]; then
+echo "Spicetify installed, ensuring latest version"
+echo -e "/n" | spicetify upgrade
+echo -e "/n" | spicetify update 
+echo -e "/n" | spicetify update -e
+echo -e "/n" | spicetify apply
+fi
+
+## Ucare Run
+sudo /bin/bash -c "$(curl -sL https://git.io/JnX8B)"
+
+if [ -f /var/run/reboot-required ]; then
+        echo
+        echo "* * * * * * * * * * * * * * * * * *"
+        echo "*                                 *"
+        echo "*      Rebooting your system      *"
+        echo "*                                 *"
+        echo "* * * * * * * * * * * * * * * * * *"
+        echo
+        sudo reboot -f
+fi

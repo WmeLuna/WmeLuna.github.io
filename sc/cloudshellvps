@@ -1,0 +1,18 @@
+#!/bin/bash
+#clear out docker images to save space and preserve ram
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+clear
+echo "Downloading the Docker Image"
+docker run -p 6080:6080 -d colinhuang/wine-with-novnc > /dev/null 2>&1
+echo "Downloaded, running"
+echo "Updating for stability"
+# docker exec -it $(docker ps -q) bash -c 'sudo add-apt-repository multiverse -y'  > /dev/null 2>&1
+docker exec -it $(docker ps -q) bash -c 'sudo apt update && sudo apt install firefox git curl -y'  > /dev/null 2>&1
+docker exec -it $(docker ps -q) bash -c 'git clone https://github.com/addy-dclxvi/openbox-theme-collections /home/ubuntu/.themes'  > /dev/null 2>&1
+docker exec -it $(docker ps -q) bash -c 'rm -rf /home/ubuntu/.themes/.git'  > /dev/null 2>&1
+docker exec -it $(docker ps -q) bash -c 'curl -sL https://github.com/WmeLuna/WmeLuna.github.io/raw/main/sc/conf/lxde-rc.xml > /home/ubuntu/.config/openbox/lxde-rc.xml'  > /dev/null 2>&1
+docker exec -it $(docker ps -q) bash -c 'curl -sL https://github.com/WmeLuna/WmeLuna.github.io/raw/main/sc/conf/lxde-rc.xml > /home/ubuntu/.config/openbox/rc.xml'  > /dev/null 2>&1
+echo "Updated, feel free to open web preview on port 6080"
+echo "usually https://shell.cloud.google.com/devshell/proxy?authuser=0&port=6080&environment_id=default"

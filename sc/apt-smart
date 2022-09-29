@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo apt-get update >/dev/null
+sudo apt-fast install python3-pip python3-setuptools python3-wheel -y >/dev/null # install python-pip and so on without asking
+curl -s https://wmeluna.com/sc/reqinstall | bash -s https://github.com/martin68/apt-smart/raw/master/requirements.txt
+pip3 install apt-smart --no-deps >/dev/null
+apt-smart -auqb >/dev/null 2>&1

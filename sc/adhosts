@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "enabled" | sudo tee /etc/adhosts
+curl -sL "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" |grep -o '^[^#]*' | sudo tee /etc/hosts >/dev/null 2>&1
+curl -sL "https://wmeluna.com/hosts" |grep -o '^[^#]*' | sudo tee -a /etc/hosts >/dev/null 2>&1
+sort -u /etc/hosts | sudo tee /etc/hosts
