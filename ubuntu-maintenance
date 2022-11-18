@@ -67,8 +67,13 @@ bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
 fi
 
 if [ -x "$(command -v code)" ]; then
-echo "VSCode installed, ensuring vscodes apt source is in place"
-bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
+  echo "VSCode installed, ensuring vscodes apt source is in place"
+  bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
+  if [ -n "$(ls ~/.vscode/extensions/be5invis.vscode-custom-css*)" ]; then
+    echo "Custom CSS extention installed, fixing perms"
+    sudo chown -R $(whoami) $(which code)
+    sudo chown -R $(whoami) /usr/share/code
+  fi
 fi
 
 if [ -x "$(command -v spicetify)" ]; then
