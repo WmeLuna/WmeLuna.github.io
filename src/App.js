@@ -14,7 +14,7 @@ function App() {
       <img src="https://avatars.githubusercontent.com/u/46545277" alt="pfp"></img>
       <div className="about-text">
         <h1>About me:</h1>
-        <h2>I'm a <span className="trans">trans</span> developer</h2>
+        <h2>I'm a <span className="trans">trans</span> developer (she/her)</h2>
         <h2>I mainly code things for Discord</h2>
         <h2>I am currently <DiscStatus></DiscStatus> on Discord.</h2>
       </div>
