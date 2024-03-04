@@ -46,30 +46,30 @@ if [ -f /etc/adhosts ]; then
 fi
 
 ## Update Discord
-if [ -x "$(command -v discord-ptb)" ]; then
-echo "Discord PTB Installed, running update script"
-bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
-fi
+# if [ -x "$(command -v discord-ptb)" ]; then
+# echo "Discord PTB Installed, running update script"
+# bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/discord)" >/dev/null 2>&1
+# fi
 
-if [ -f /usr/share/discord-ptb/resources/app.asar.bak ]; then
-echo "Updating OpenAsar for better performance (https://github.com/GooseMod/OpenAsar)"
-bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/openasar)" 
-fi
+# if [ -f /usr/share/discord-ptb/resources/app.asar.bak ]; then
+# echo "Updating OpenAsar for better performance (https://github.com/GooseMod/OpenAsar)"
+# bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/openasar)" 
+# fi
 
-if [ -x "$(command -v betterdiscordctl)" ]; then
-echo "BetterDiscordCTL Installed, running update script"
-bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/bdctl)" >/dev/null 2>&1
-fi
+# if [ -x "$(command -v betterdiscordctl)" ]; then
+# echo "BetterDiscordCTL Installed, running update script"
+# bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/bdctl)" >/dev/null 2>&1
+# fi
 
-if [ -x "$(command -v cura)" ]; then
-echo "Cura Installed, running stability script"
-bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
-fi
+# if [ -x "$(command -v cura)" ]; then
+# echo "Cura Installed, running stability script"
+# bash -c "$(curl -sL https://wmeluna.com/sc/unfuckcura)"
+# fi
 
 if [ -x "$(command -v code)" ]; then
   echo "VSCode installed, ensuring vscodes apt source is in place"
   bash -c "$(curl -sL https://github.com/WmeLuna/ubuntu-dotfiles/raw/main/vscode)" >/dev/null 2>&1
-  if [ -n "$(ls ~/.vscode/extensions/be5invis.vscode-custom-css*)" ]; then
+  if [ -n "$(ls ~/.vscode/extensions/be5invis.vscode-custom-css* 2>/dev/null)" ] || [ -n "$(ls ~/.vscode/extensions/drcika.apc-extension-* 2>/dev/null)" ]; then
     echo "Custom CSS extention installed, fixing perms"
     sudo chown -R $(whoami) $(which code)
     sudo chown -R $(whoami) /usr/share/code
